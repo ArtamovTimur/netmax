@@ -18,9 +18,15 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->integer('tarif_id')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });
+        \Illuminate\Support\Facades\DB::table('users')->insert([
+            'name' => 'her',
+            'email' => 'her@mail.ru',
+            'password' =>'erfdsfds'
+        ]);
     }
 
     /**

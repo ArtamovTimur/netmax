@@ -12,8 +12,10 @@
 */
 
 Route::get('/', function () {
-    //\App\Invoice::replenish(1, 5000);
-    //\App\Invoice::pay(1, 2000);
-    //\App\Invoice::pay(1, 2000);
-   \App\Invoice::pay(1, 2000);
+
+   \App\Invoice::create(1); // создал счет
+   \App\Invoice::replenish(1, 5000); // поплнил счет
+    App\Invoice::pay(1, 2000); //  списал со счета
+    \App\Tarif::userPay(1, 1); // купил тариф
+
 });
